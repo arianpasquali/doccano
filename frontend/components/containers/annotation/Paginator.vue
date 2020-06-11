@@ -34,7 +34,7 @@
           fab
           small
         >
-          <v-icon>mdi-chevron-left</v-icon>
+          Previous
         </v-btn>
       </template>
       <span>←</span>
@@ -51,7 +51,7 @@
           fab
           small
         >
-          <v-icon>mdi-chevron-right</v-icon>
+          Next
         </v-btn>
       </template>
       <span>→</span>

@@ -9,12 +9,8 @@
         min-width="36"
         outlined
       >
-        <v-icon v-if="approved">
-          mdi-check
-        </v-icon>
-        <v-icon v-else>
-          mdi-close
-        </v-icon>
+        <span v-if="approved">Approved</span>
+        <span v-else>Approve</span>
       </v-btn>
     </template>
     <span v-if="approved">Checked</span>

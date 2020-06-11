@@ -127,20 +127,19 @@ div.columns(v-cloak="")
           v-on:click="approveDocumentAnnotations"
           v-bind:data-tooltip="documentAnnotationsApprovalTooltip"
         )
-          span.icon
-            i.far(v-bind:class="[documentAnnotationsAreApproved ? 'fa-check-circle' : 'fa-circle']")
+          <span v-if="documentAnnotationsAreApproved">Approved</span>
+          <span v-else="documentAnnotationsAreApproved">Approve</span>
+          
       div.column.is-1.has-text-right
         a.button(v-on:click="isAnnotationGuidelineActive = !isAnnotationGuidelineActive")
-          span.icon
-            i.fas.fa-book
-      div.column.is-1.has-text-right
-        a.button(
-          v-on:click="isMetadataActive = !isMetadataActive && documentMetadata != null"
-          v-bind:disabled="documentMetadata == null"
-          v-bind:title="documentMetadata == null ? 'No document metadata available.' : null"
-        )
-          span.icon
-            i.fas.fa-box
+          span Ajuda
+      //- div.column.is-1.has-text-right
+      //-   a.button(
+      //-     v-on:click="isMetadataActive = !isMetadataActive && documentMetadata != null"
+      //-     v-bind:disabled="documentMetadata == null"
+      //-     v-bind:title="documentMetadata == null ? 'No document metadata available.' : null"
+      //-   )
+      //-     span Meta
 
     div.columns
       div.column
@@ -152,22 +151,20 @@ div.columns(v-cloak="")
     div.level.mt30
       div.level-left
         div.buttons
-          a.button(
-            v-shortkey="{ prev1: ['shift', 'ctrl', 'p'], prev2: ['shift', 'arrowup'], prev3: ['shift', 'arrowleft'] }"
-            v-on:click="prevPagination"
-            v-on:shortkey="prevPagination"
-          )
-            span.icon.tooltip(data-tooltip="Previous page")
-              i.fas.fa-arrow-left
+          //- a.button(
+          //-   v-shortkey="{ prev1: ['shift', 'ctrl', 'p'], prev2: ['shift', 'arrowup'], prev3: ['shift', 'arrowleft'] }"
+          //-   v-on:click="prevPagination"
+          //-   v-on:shortkey="prevPagination"
+          //- )
+          //-   span Previous page
 
           a.button(
             v-shortkey="{ prev1: ['ctrl', 'p'], prev2: ['arrowup'], prev3: ['arrowleft'] }"
             v-on:click="prevPage"
             v-on:shortkey="prevPage"
-          )
-            span.icon.tooltip(data-tooltip="Previous document")
-              i.fas.fa-chevron-left
-
+          )          
+            span Previous
+              
       div.level-center
         span.button.is-static {{ offset + pageNumber + 1 }} / {{ count }}
 
@@ -178,13 +175,11 @@ div.columns(v-cloak="")
             v-on:click="nextPage"
             v-on:shortkey="nextPage"
           )
-            span.icon.tooltip(data-tooltip="Next document")
-              i.fas.fa-chevron-right
+            span Next
 
-          a.button(
-            v-shortkey="{ next1: ['shift', 'ctrl', 'n'], next2: ['shift', 'arrowdown'], next3: ['shift', 'arrowright'] }"
-            v-on:click="nextPagination"
-            v-on:shortkey="nextPagination"
-          )
-            span.icon.tooltip(data-tooltip="Next page")
-              i.fas.fa-arrow-right
+          //- a.button(
+          //-   v-shortkey="{ next1: ['shift', 'ctrl', 'n'], next2: ['shift', 'arrowdown'], next3: ['shift', 'arrowright'] }"
+          //-   v-on:click="nextPagination"
+          //-   v-on:shortkey="nextPagination"
+          //- )
+          //-   span Next page

@@ -9,9 +9,7 @@
           min-width="36"
           outlined
         >
-          <v-icon>
-            mdi-book-open-outline
-          </v-icon>
+          Guidelines
         </v-btn>
       </template>
       <span>Show guideline</span>
